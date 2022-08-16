@@ -20,9 +20,16 @@
 
 class FirstClass
 {
+private:
+    int privateProperty;
 
 public: /* Access Modifier */
     int property1;
     int property2;
     string property3;
+
+    void function1()
+    {
+        // Code goes here
+    }
 };

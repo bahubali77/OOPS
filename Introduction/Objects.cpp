@@ -56,4 +56,14 @@ int main()
     (*FirstClassTypePointer).property1 = 1;
     FirstClassTypePointer->property2 = 2;
     FirstClassTypePointer->property3 = "string";
+
+    // Accessing Functions is same as accessing data member.
+    // Static
+    FirstClassTypeObject.function1();
+
+    // Dynamic
+    FirstClassTypePointer->function1();
+    (*FirstClassTypePointer).function1();
+
+    cout << FirstClassTypePointer->property3;
 }
