@@ -43,6 +43,12 @@ int main()
 {
     DefaultConstructorClass object1;
 
+    cout << "Static Object" << endl;
     cout << "a : " << object1.a << endl;
     cout << "b : " << object1.b << endl;
+
+    DefaultConstructorClass *pointer1 = new DefaultConstructorClass;
+    cout << "Dynamic Object" << endl;
+    cout << "a : " << pointer1->a << endl;
+    cout << "b : " << pointer1->b << endl;
 }
