@@ -39,4 +39,13 @@ int main()
     object4 = object5;
     *pointer4 = object5;
     object5 = *pointer3;
+
+    /**
+     * Special case
+     * It is same as
+     * CopyConstrcutorClass object6
+     * object6 = object5;
+     * But It will be interpted as object6.CopyConstrcutorClass(object7) to optimize the calls hence copy constructor is called
+     */
+    CopyConstrcutorClass object6 = object5;
 }
