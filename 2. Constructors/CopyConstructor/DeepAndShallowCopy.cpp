@@ -16,14 +16,15 @@
  * In deep copy : we copied all the data members. For dynamically allocate one , we allocate the new memory and then copied the pointed value in it.
  */
 
+#include <iostream>
+using namespace std;
 class CopyType
 {
 private:
+public:
     int property1;
     int *shallowProperty;
     int *deepProperty;
-
-public:
     CopyType(int property1, int *shallowProperty, int *deepProperty)
     {
         this->property1 = property1;
@@ -44,10 +45,13 @@ int main()
     int *value2 = new int(10);
     int *value3 = new int(20);
     CopyType obj1(1, value2, value3);
+    cout << obj1.property1 << " " << *(obj1.shallowProperty) << " " << *(obj1.deepProperty) << endl;
 
     // reassigning value to same pointers
     // value2 will be changed for obj1 as shallow copy but not value3 as deep copied.
     *value2 = 20;
     *value3 = 40;
     CopyType obj2(1, value2, value3);
+    cout << obj2.property1 << " " << *(obj2.shallowProperty) << " " << *(obj2.deepProperty) << endl;
+    cout << obj1.property1 << " " << *(obj1.shallowProperty) << " " << *(obj1.deepProperty) << endl;
 }
